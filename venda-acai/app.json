@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "venda-acai",
+    "name": "Açaí App",
     "slug": "venda-acai",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo-app.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -16,17 +16,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo-app.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.vinnixp098.vendaacai"
+      "package": "com.vinnixp098.weatherapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "owner": "vinnixp098",
     "extra": {
       "eas": {
-        "projectId": "e1c2287b-70cc-4c41-8642-8ab18cadec5e"
+        "projectId": "e5b637e2-f772-4eec-8056-57a459c67344"
       }
     }
   }

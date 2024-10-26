@@ -1,5 +1,4 @@
-import { Button, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Button, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-native";
 import { RootState } from "../redux/store";
