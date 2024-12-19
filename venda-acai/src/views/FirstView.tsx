@@ -6,7 +6,7 @@ import { setNavBar } from '../redux/reducers/AppReducer';
 import { View } from 'react-native';
 import { ImageComponent } from '../components/ImageComponent';
 import { RootStackParamList } from '../app/types/types';
-import React = require('react');
+import React from 'react';
 
 type HomeViewNavigationProp = StackNavigationProp<RootStackParamList, 'HomeView'>;
 

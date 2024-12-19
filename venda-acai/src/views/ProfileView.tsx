@@ -4,7 +4,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 import { RootStackParamList } from "../app/types/types";
 import { useNavigation } from "@react-navigation/native";
-import React = require("react");
+import React from 'react';
 
 type ProfileViewNavigationProp = NativeStackNavigationProp<RootStackParamList, 'ProfileView'>;
 

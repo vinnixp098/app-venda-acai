@@ -11,7 +11,7 @@ import { ImageComponent } from "../components/ImageComponent";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../app/types/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React = require("react");
+import React from 'react';
 
 export function HomeView() {
 	type HomeViewNavigationProp = NativeStackNavigationProp<RootStackParamList, 'HomeView'>;

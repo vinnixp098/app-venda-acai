@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack"; 
 
 import { RootStackParamList } from "../app/types/types";
-import React = require("react");
+import React from 'react';
 
 type CardViewNavigationProp = NativeStackNavigationProp<RootStackParamList, 'CardView'>;
 
