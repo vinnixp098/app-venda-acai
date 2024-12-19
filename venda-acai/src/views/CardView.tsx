@@ -1,20 +1,32 @@
-import { useEffect } from "react";
-import { Button, Text, View } from "react-native";
-import { useNavigate } from "react-router-native";
+import { Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack"; 
 
-export function CardView(){
-    const navigate = useNavigate();
-    return(
+import { RootStackParamList } from "../app/types/types";
+import React = require("react");
+
+type CardViewNavigationProp = NativeStackNavigationProp<RootStackParamList, 'CardView'>;
+
+export function CardView() {
+    const navigation = useNavigation<CardViewNavigationProp>(); 
+
+    return (
         <View
             style={{
                 flex: 1,
                 height: "100%",
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
             }}
         >
-            <Text>CardView</Text>
+            <Text
+                onPress={() => {
+                    navigation.navigate("HomeView");
+                }}
+            >
+                CardView
+            </Text>
         </View>
-    )
+    );
 }

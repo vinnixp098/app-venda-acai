@@ -1,9 +1,15 @@
 import { useEffect } from "react";
 import { Button, Text, View } from "react-native";
-import { useNavigate } from "react-router-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack"; 
+
+import { RootStackParamList } from "../app/types/types";
+import { useNavigation } from "@react-navigation/native";
+import React = require("react");
+
+type ProfileViewNavigationProp = NativeStackNavigationProp<RootStackParamList, 'ProfileView'>;
 
 export function ProfileView(){
-    const navigate = useNavigate();
+    const navigation = useNavigation<ProfileViewNavigationProp>();
     return(
         <View
             style={{
@@ -14,7 +20,9 @@ export function ProfileView(){
                 alignItems: "center"
             }}
         >
-            <Text>ProfileView</Text>
+            <Text onPress={()=>{
+                navigation.navigate("HomeView");
+            }}>ProfileView</Text>
         </View>
     )
 }

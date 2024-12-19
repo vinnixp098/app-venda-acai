@@ -1,32 +1,45 @@
-import React from 'react';
-import { NativeRouter, Route, Routes, useNavigate } from 'react-router-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import { FirstView } from '../views/FirstView';
 import { HomeView } from '../views/HomeView';
-import { BarNavigation } from '../components/BarNavigation';
 import { CardView } from '../views/CardView';
 import { ProfileView } from '../views/ProfileView';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
-import { setNavBar } from '../redux/reducers/AppReducer';
 import { ProdutoView } from '../views/ProdutoView';
+import { RootStackParamList } from '../app/types/types';
+import React = require('react');
 
-export const AppRoutes = () => {
-    const navBar = useSelector((state: RootState) => state.app.navBar);
-    const router = useSelector((state: RootState) => state.app.router);
+const Stack = createStackNavigator<RootStackParamList>();
 
-    console.log("router:  ", router);
-
-
-    return (
-        <NativeRouter>
-            <Routes>
-                <Route path="/" element={<FirstView />} />
-                <Route path="/HomeView" element={<HomeView />} />
-                <Route path="/CardView" element={<CardView />} />
-                <Route path="/ProfileView" element={<ProfileView />} />
-                <Route path="/ProdutoView" element={<ProdutoView/>}/>
-            </Routes>
-            {navBar && <BarNavigation/>}
-        </NativeRouter>
-    );
+export function AppRoutes() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="FirstView">
+        <Stack.Screen 
+          name="FirstView" 
+          component={FirstView} 
+          options={{ headerShown: false }} // Esconde o cabeçalho
+        />
+        <Stack.Screen 
+          name="HomeView" 
+          component={HomeView} 
+          options={{ headerShown: false }} // Esconde o cabeçalho
+        />
+        <Stack.Screen 
+          name="CardView" 
+          component={CardView} 
+          options={{ headerShown: false }} // Esconde o cabeçalho
+        />
+        <Stack.Screen 
+          name="ProfileView" 
+          component={ProfileView} 
+          options={{ headerShown: false }} // Esconde o cabeçalho
+        />
+        <Stack.Screen 
+          name="ProdutoView" 
+          component={ProdutoView} 
+          options={{ headerShown: false }} // Esconde o cabeçalho
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }

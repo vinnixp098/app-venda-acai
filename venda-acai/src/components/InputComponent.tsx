@@ -5,19 +5,24 @@ interface InputComponentProps extends TextInputProps {
   label?: string;
   labelStyle?: TextStyle;
   style?: TextInputProps['style'];
+  placeholderColor?:  string;
+  fontSize?:  number;
+
+
 }
 
 export const InputComponent: React.FC<InputComponentProps> = ({
   label,
   labelStyle,
   style,
+  placeholderColor,
   ...props
 }) => {
   return (
     <View style={styles.container}>
       <TextInput
         style={[styles.input, style]}
-        placeholderTextColor="#888"
+        placeholderTextColor={placeholderColor}
         {...props}
       />
     </View>
@@ -29,9 +34,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   input: {
-    borderRightColor: "red",
     borderRightWidth:  0,
-    borderWidth: 1,
     paddingHorizontal: 20,
     fontSize: 16,
   },

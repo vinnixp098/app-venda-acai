@@ -19,7 +19,6 @@ const persistConfig = {
   whitelist: ["app"],
 };
 
-
 const rootReducer = combineReducers({
   app: AppReducer,
 });
@@ -33,6 +32,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [...reduxPersistActions],
       },
+      immutableCheck: false, // Desativa o ImmutableStateInvariantMiddleware
     }),
 });
 
