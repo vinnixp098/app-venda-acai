@@ -18,7 +18,7 @@ export function FirstView() {
     dispatch(setNavBar(false));
 
     const timer = setTimeout(() => {
-      navigation.navigate('HomeView');
+      navigation.replace('HomeView');
       dispatch(setNavBar(true));
     }, 5000);
 
